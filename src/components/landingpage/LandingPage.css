@@ -1,0 +1,43 @@
+.container {
+  margin: 0 !important;
+  max-width: 100% !important;
+}
+.carouselContainer {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+}
+/* Estilos para el grupo de imágenes */
+.imageGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px; /* Margen horizontal reducido */
+  width: auto; /* Ancho basado en el contenido */
+}
+.odd {
+  margin-top: 60px;
+}
+.even {
+  margin-top: 10px;
+}
+/* Estilos para las imágenes */
+.image {
+  width: auto; /* Mantener el ancho basado en la imagen */
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px; /* Separación vertical */
+}
+/* Ajustar el ancho del slide */
+.slick-slide {
+  width: auto !important; /* Asegura que el ancho del contenedor del carrusel se ajuste a las imágenes */
+}
+@media (max-width: 768px) {
+  .image {
+    height: 150px;
+    width: auto;
+  }
+}

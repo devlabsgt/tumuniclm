@@ -1,0 +1,210 @@
+/* Estilos para pantallas grandes (más de 768px) */
+.dynamic-content {
+  position: absolute; /* Colocar el texto en relación al contenedor */
+  top: 45%; /* Ajusta este valor para que el texto quede entre las fotos */
+  left: 0; /* Alineado a la izquierda, ajusta este valor según lo necesites */
+  transform: translateY(-50%); /* Para centrar verticalmente */
+  font-size: 1.3em; /* Cambié 'sem' por 'em', que es una unidad válida */
+  color: #333;
+  text-align: left; /* Alineación del texto a la izquierda */
+  width: 50%; /* Ajusta el ancho si es necesario */
+  padding: 10px; /* Añade padding para que no toque los bordes */
+  z-index: 10; /* Asegura que esté por encima de las imágenes pero detrás de otros elementos importantes */
+}
+
+.education-container {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh; /* Altura completa de la pantalla */
+  background: #fff;
+}
+
+.left-section {
+  width: 50%; /* Ocupará el 50% del ancho total */
+  position: relative; /* Para permitir el posicionamiento absoluto de los círculos */
+  height: 100%; /* Altura completa del contenedor */
+  margin-left: 3%;
+}
+
+/* Estilos base para los círculos */
+.circle {
+  text-align: center;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  position: absolute; /* Control absoluto del posicionamiento */
+}
+
+.circle img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.circle p {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #06c;
+}
+
+.circle small {
+  font-size: 0.9em;
+  color: #333;
+}
+
+.right-section {
+  width: 40%; /* Ocupará el 40% del ancho total */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%; /* Altura completa del contenedor */
+  margin-top: 5%;
+  margin-right: 5%;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
+  width: 500px;
+}
+.text-container {
+  width: 500px;
+}
+
+.stats-container p {
+  margin: 0;
+  flex: 1;
+}
+
+.numbersCount {
+  color: #06c;
+  font-size: 1.5em;
+  flex: 0;
+  text-align: right;
+  font-weight: bold;
+}
+
+.right-section h1 {
+  color: #06c;
+  font-size: 3em;
+  margin: 20px 0;
+}
+
+.right-section p {
+  font-size: 1.2em;
+  color: #333;
+  text-align: justify;
+  margin: 10px 0;
+}
+
+/* Posicionamiento individualizado para pantallas grandes */
+.circle-mineduc {
+  top: 0;
+  left: 0;
+}
+
+.circle-cmed {
+  top: 5%;
+  left: 35%;
+}
+
+.circle-capacitaciones {
+  top: 15%;
+  left: 70%;
+}
+
+.circle-deportes {
+  top: 50%;
+  left: 70%;
+}
+
+.circle-musica {
+  top: 65%;
+  left: 35%;
+}
+
+.circle-arte {
+  top: 70%;
+  left: 0%;
+}
+
+/* Control del tamaño del video */
+.react-player {
+  width: 90% !important;
+  max-width: 700px;
+  height: auto !important;
+  margin: 0 auto;
+}
+
+/* Estilos para pantallas pequeñas (menos de 768px) */
+@media (max-width: 768px) {
+  .education-container {
+    flex-direction: column; /* Cambia la dirección a columna */
+    align-items: center;
+    height: auto; /* Deja que la altura sea automática */
+  }
+
+  .right-section {
+    text-align: center;
+    width: 100%;
+    margin-top: 10%; /* Ajusta el margen */
+  }
+
+  .left-section {
+    text-align: center;
+    width: 100%;
+    position: static; /* Elimina el posicionamiento absoluto en pantallas pequeñas */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+    grid-gap: 10px;
+    margin-top: 20px;
+  }
+
+  .circle {
+    position: relative; /* Elimina el posicionamiento absoluto */
+    width: auto; /* Ajusta el ancho automáticamente */
+  }
+
+  .circle img {
+    width: 80px; /* Tamaño más pequeño para pantallas móviles */
+    height: 80px;
+  }
+
+  .circle p {
+    font-size: 1em;
+  }
+
+  .circle small {
+    font-size: 0.8em;
+  }
+
+  /* Elimina el posicionamiento absoluto para que las imágenes fluyan de manera natural */
+  .circle-mineduc,
+  .circle-cmed,
+  .circle-capacitaciones,
+  .circle-deportes,
+  .circle-musica,
+  .circle-arte {
+    top: auto;
+    left: auto;
+  }
+
+  .react-player {
+    width: 100% !important;
+  }
+
+  /* Ajusta la posición del texto para pantallas pequeñas */
+  .dynamic-content {
+    top: auto;
+    left: auto;
+    position: relative;
+    text-align: center;
+    width: 100%;
+  }
+}

@@ -1,0 +1,152 @@
+/* Contenedor principal: centrado en pantalla grande */
+.container {
+  display: flex;
+  flex-direction: column; /* 🔹 EN TELÉFONOS EL CONTENIDO SE APILA */
+  width: 100%;
+  max-width: 100%;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* Sección de contenido (izquierda) */
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+}
+
+.content p {
+  text-align: center;
+  margin-top: 1em;
+  font-size: 1.5em;
+}
+/* Sección de carpetas (derecha o abajo) */
+.folders {
+  width: 100%;
+  padding: 1em;
+  height: 800px; /* 🔹 EN TELÉFONOS SIEMPRE 400px */
+  overflow-y: auto; /* Permite hacer scroll si hay muchos elementos */
+}
+
+/* 🔹 Contenedor del Header */
+.header {
+  display: flex;
+  flex-direction: column; /* 🔹 Separa en dos líneas */
+  align-items: flex-end; /* 🔹 Todo alineado a la derecha */
+  padding: 10px;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 15px;
+  width: 100%; /* 🔹 Ocupa todo el ancho disponible */
+  min-height: 60px; /* 🔹 Espacio suficiente para ambas líneas */
+}
+
+/* 🔹 Breadcrumb en una nueva línea */
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap; /* 🔹 Permite saltos de línea si es largo */
+  gap: 8px;
+  font-size: 1.2em;
+  justify-content: flex-end; /* 🔹 Se mantiene alineado a la derecha */
+  width: 100%;
+}
+
+/* 🔹 Cada dos carpetas, el breadcrumb hace un salto de línea */
+.breadcrumb-item {
+  display: inline-block;
+  max-width: 100%;
+}
+
+/* 🔹 Estilos para los enlaces del breadcrumb */
+.breadcrumb-link {
+  cursor: pointer;
+  color: #1890ff;
+  white-space: nowrap; /* 🔹 Evita cortes raros */
+}
+
+.breadcrumb-link:hover {
+  text-decoration: underline;
+}
+
+.title {
+  margin-top: 1em;
+  text-align: center;
+  font-size: 2em;
+}
+
+.title span {
+  font-size: 0.8em !important;
+  display: block;
+}
+
+/* Botón de volver dentro de carpetas */
+.folder-back-button {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-title {
+  margin: 0;
+  font-weight: bold;
+}
+
+/* Lista de carpetas */
+.folder-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.folder-card {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  text-align: left;
+}
+
+/* Iconos */
+.folder-icon {
+  font-size: 3em;
+  color: #06c;
+  margin-right: 10px;
+}
+
+.folder-text {
+  font-size: 1.7em;
+}
+
+.file-icon {
+  font-size: 24px;
+  color: #1890ff;
+  margin-right: 10px;
+}
+
+/* 🔹 EN PANTALLAS GRANDES: SE PONE AL LADO DERECHO */
+@media (min-width: 1024px) {
+  .container {
+    flex-direction: row; /* 🔹 EN GRANDES SE PONEN LADO A LADO */
+    justify-content: center;
+    align-items: flex-start;
+    width: 100vw;
+    max-width: 1200px;
+    margin: auto;
+    height: 100vh;
+  }
+  .content {
+    flex: 60%;
+    width: 60%;
+    max-width: 60%;
+  }
+  .folders {
+    flex: 40%;
+    width: 40%;
+    max-width: 40%;
+    height: 100%; /* 🔹 EN GRANDES SE EXPANDE */
+    overflow-y: auto;
+  }
+}

@@ -1,0 +1,222 @@
+@import url("https://fonts.cdnfonts.com/css/blacksword");
+/*
+    Azul
+    #06C
+
+    Celeste
+    #0CF 
+
+    Menta
+    #0FC
+
+    Verde 
+    #0C9
+    */
+
+/*    -------------------------     MOBILE     -------------------------     */
+
+.root {
+  background-color: black !important;
+}
+
+/* Ajusta otros estilos del cuerpo según sea necesario */
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+.header {
+  height: 1000 !important;
+}
+.App-header {
+  background-color: #fff0 !important;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Bienvenida.css */
+.bienvenida-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999; /* Un valor alto para asegurarse de que esté por encima de otros elementos */
+  backdrop-filter: blur(
+    10px
+  ); /* Ajusta la cantidad de desenfoque según tus preferencias */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(
+    100,
+    100,
+    100,
+    0.5
+  ); /* Ajusta el color de fondo y la opacidad según tus preferencias */
+}
+.card {
+  position: relative;
+}
+
+.header div > h1 {
+  position: absolute;
+  font-family: "Blacksword", sans-serif;
+  padding-bottom: 1em;
+  top: 20%;
+  left: 50%;
+  font-size: 2.2em;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+.header div > h2 {
+  position: absolute;
+  text-align: center;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, 20%);
+  font-size: 1.7em;
+  z-index: 999;
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+.body {
+  z-index: 1; /* Índice Z superior para el contenido del cuerpo */
+  margin-top: -250px !important;
+  margin-bottom: 5em !important;
+  border-radius: 1em;
+  box-shadow: 0 0 5em rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+  flex-grow: 1; /* Permitir que el body crezca para ocupar el espacio restante */
+  width: 100%; /* Ancho del body */
+  margin: auto; /* Centrar horizontalmente */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(
+      20px
+    ); /* Opcional: Ajusta la posición inicial del texto */
+  }
+  to {
+    transform: translateY(
+      0px
+    ); /* Opcional: Ajusta la posición inicial del texto */
+
+    opacity: 1;
+  }
+}
+@keyframes fadeIn1 {
+  from {
+    opacity: 0;
+    transform: translateX(
+      20px
+    ); /* Opcional: Ajusta la posición inicial del texto */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(
+      0px
+    ); /* Opcional: Ajusta la posición inicial del texto */
+  }
+}
+@keyframes fadeIn2 {
+  from {
+    transform: translateX(
+      0px
+    ); /* Opcional: Ajusta la posición inicial del texto */
+
+    opacity: 0;
+  }
+  to {
+    transform: translateX(
+      20px
+    ); /* Opcional: Ajusta la posición inicial del texto */
+    opacity: 1;
+  }
+}
+
+.fade-in-on-scroll {
+  opacity: 0;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.fade-in-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-from-bottom {
+  transform: translateY(100%);
+  transition: transform 1s ease-in-out;
+}
+
+.fade-in-on-scroll.visible .fade-in-from-bottom {
+  transform: translateY(0);
+}
+
+/*    -------------------------     LAPTOP     -------------------------     */
+@media screen and (min-width: 1280px) {
+  /*tambien puede ser 768px*/
+  .header div > h1 {
+    top: 20%;
+    font-size: 4em;
+  }
+  .header div > h2 {
+    position: absolute;
+    text-align: center;
+    top: 35%;
+    left: 50%;
+    font-size: 3em;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  }
+
+  .header .container {
+    margin: 0 !important; /* Esto centra el contenido en la pantalla */
+    max-width: 100% !important;
+  }
+
+  .body {
+    flex-grow: 1; /* Permitir que el body crezca para ocupar el espacio restante */
+    width: 80%; /* Ancho del body */
+    margin: auto; /* Centrar horizontalmente */
+  }
+
+  .footer {
+    margin-top: auto; /* Colocar el footer al final del contenedor */
+    max-width: 100%; /* Ancho máximo igual al contenedor */
+  }
+}

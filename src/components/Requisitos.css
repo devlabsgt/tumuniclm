@@ -1,0 +1,63 @@
+/* CustomNavbar.css 
+.centered-tabs-container {
+  font-size: 4em;
+  margin: 0.3em;
+}
+.titulo {
+  margin: 0 auto;
+}
+h2 {
+  text-align: center;
+}
+li {
+  margin-bottom: 1em;
+}
+
+/* Estilos generales */
+.centered-tabs-container {
+  padding: 20px;
+}
+
+.titulo h2 {
+  text-align: center;
+}
+
+.botonMenu {
+  width: 100%;
+  height: auto;
+  font-size: 1em;
+}
+
+/*-------------------------   LAPTOP     -------------------------     */
+@media screen and (min-width: 768px) {
+  .centered-tabs-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .titulo {
+    margin: 0.25em auto;
+  }
+  .ant-tabs-tab {
+    font-size: 1.5em !important; /* Tamaño de fuente de las pestañas */
+  }
+
+  .ant-collapse-header {
+    font-size: 1.5em !important; /* Tamaño de fuente de los encabezados de colapso */
+  }
+
+  .ant-table {
+    font-size: 2em !important; /* Tamaño de fuente de las tablas */
+  }
+
+  .botonMenu {
+    width: auto; /* Ancho automático */
+    font-size: 1.5em;
+    display: block; /* Para centrar el botón */
+    margin: 0 auto; /* Centrar el botón horizontalmente */
+  }
+
+  .titulo h2 {
+    font-size: 1.5em; /* Tamaño de fuente del título */
+    text-align: center !important;
+  }
+}

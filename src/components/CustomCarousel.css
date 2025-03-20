@@ -1,0 +1,20 @@
+.carousel-item {
+  width: 100% !important;
+  height: auto !important; /* Asegura que el contenedor crezca con la imagen */
+}
+
+.carousel-image {
+  display: block !important;
+  margin: 0 auto !important; /* Centra horizontalmente la imagen */
+  width: 90% !important; /* Asegura que la imagen ocupe el ancho completo */
+  height: auto !important; /* Permite que la altura se ajuste automáticamente manteniendo la relación de aspecto */
+  object-fit: contain !important; /* Asegura que la imagen no se distorsione */
+}
+
+/*     -------------------------     LAPTOP     -------------------------     */
+@media screen and (min-width: 768px) {
+  .carousel-image {
+    height: 100% !important; /* Fuerza la altura de 700px en pantallas más grandes */
+    max-height: none !important; /* Asegura que no haya un límite de altura */
+  }
+}
