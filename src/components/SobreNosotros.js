@@ -12,6 +12,7 @@ import ServiciosChart from "./charts/ServiciosChart";
 import SeguridadChart from "./charts/SeguridadChart";
 import SaludChart from "./charts/SaludChart";
 import MedioAmbienteChart from "./charts/MedioAmbienteChart";
+import ImageCarousel from "./charts/ImageCarousel";
 
 const SobreNosotrosPage = () => {
   return (
@@ -93,6 +94,8 @@ const SobreNosotrosPage = () => {
         </div>
         <Divider />
       </FadeInOnScroll>
+
+      <ImageCarousel start={65} end={73} />
 
       {/* 🔹 Video */}
       <FadeInOnScroll offset={200}>

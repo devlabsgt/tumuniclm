@@ -1,79 +1,74 @@
 import React from "react";
 
-const DataTable = ({
-  data,
-  tableFontSize = "1em",
-  firstColumnWidth = "200px",
-}) => {
-  // Ordenar por mayor ejecución
-  const sortedData = [...data].sort((a, b) => b.ejecutado - a.ejecutado);
+const DataTable = ({ data }) => {
+  const sorted = [...data].sort((a, b) => b.ejecutado - a.ejecutado);
+  const columnWidth = "150px"; // 🔧 Cambiá esto y verás el efecto
 
-  // Estilos generales
-  const tableStyle = {
-    fontSize: tableFontSize,
-    width: "100%",
-    borderCollapse: "collapse",
+  const thStyle = {
+    padding: 12,
+    border: "1px solid #fff",
+    background: "#06c",
+    color: "#fff",
+    fontWeight: "bold",
+    width: columnWidth,
+  };
+
+  const tdStyle = {
+    padding: 12,
+    border: "1px solid #ddd",
+    width: columnWidth,
     textAlign: "center",
-    borderRadius: "8px",
-    overflow: "hidden",
-    boxShadow: "0px 2px 10px rgba(0, 0, 0, 0.1)",
-  };
-
-  const cellStyle = {
-    padding: "12px",
-    border: "1px solid #ddd", // 🔹 Aplica borde en ambos ejes
-  };
-
-  const headerStyle = {
-    ...cellStyle,
-    backgroundColor: "#06c",
-    color: "white",
-    fontWeight: "600",
-    fontSize: "1em",
-    textTransform: "capitalize",
-    border: "1px solid #ffffff", // 🔹 Mantiene separación limpia en encabezado
+    wordWrap: "break-word",
   };
 
   return (
-    <div style={{ marginTop: "1em", overflowX: "auto", width: "100%" }}>
-      <table style={tableStyle}>
+    <div style={{ overflowX: "auto", marginTop: 16 }}>
+      <table
+        style={{
+          borderCollapse: "collapse",
+          fontSize: 16,
+          width: "100%",
+          tableLayout: "fixed", // 🔐 Hace que los widths se respeten
+        }}
+      >
         <thead>
           <tr>
-            <th style={{ ...headerStyle, width: firstColumnWidth }}></th>
-            {sortedData.map((item, index) => (
-              <th key={index} style={headerStyle}>
+            <th
+              style={{
+                ...thStyle,
+                background: "#f2f2f2",
+                color: "#000",
+                textAlign: "left",
+              }}
+            ></th>
+            {sorted.map((item, i) => (
+              <th key={i} style={thStyle}>
                 {item.nombre}
               </th>
             ))}
           </tr>
         </thead>
         <tbody>
-          {["Presupuesto (Q)", "Ejecutado (Q)"].map((label, rowIndex) => (
-            <tr
-              key={rowIndex}
-              style={{
-                backgroundColor: rowIndex % 2 === 0 ? "#f9f9f9" : "#ffffff",
-              }}
-            >
+          {["Presupuesto (Q)", "Ejecutado (Q)"].map((label, i) => (
+            <tr key={i}>
               <td
                 style={{
-                  ...cellStyle,
+                  ...tdStyle,
                   textAlign: "left",
                   fontWeight: "bold",
-                  width: firstColumnWidth,
-                  backgroundColor: "#f2f2f2", // 🔹 Suaviza el diseño para los labels
+                  background: "#f2f2f2",
                 }}
               >
                 {label}
               </td>
-              {sortedData.map((item, index) => (
-                <td key={index} style={cellStyle}>
-                  {item[
-                    rowIndex === 0 ? "presupuestado" : "ejecutado"
-                  ].toLocaleString(undefined, {
-                    minimumFractionDigits: 2,
-                    maximumFractionDigits: 2,
-                  })}
+              {sorted.map((item, j) => (
+                <td key={j} style={tdStyle}>
+                  {item[i === 0 ? "presupuestado" : "ejecutado"].toLocaleString(
+                    undefined,
+                    {
+                      minimumFractionDigits: 2,
+                    }
+                  )}
                 </td>
               ))}
             </tr>
