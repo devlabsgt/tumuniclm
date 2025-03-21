@@ -1,48 +1,46 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Bar } from "react-chartjs-2";
 import "chart.js/auto";
-import "./politicasChart.css";
+import DataTable from "./DataTable";
 
-const Charts = ({ description, data }) => {
-  const [fontSize, setFontSize] = useState(14);
+const Charts = ({
+  description,
+  data,
+  chartHeight = "500px",
+  chartFontSizeX = 14,
+  chartFontSizeY = 14,
+}) => {
+  // Ordenar datos por ejecución de mayor a menor
+  const sortedData = [...data].sort((a, b) => b.ejecutado - a.ejecutado);
 
-  useEffect(() => {
-    const adjustFontSize = () => {
-      setFontSize(window.innerWidth < 768 ? 10 : 12);
-    };
-
-    adjustFontSize();
-    window.addEventListener("resize", adjustFontSize);
-    return () => window.removeEventListener("resize", adjustFontSize);
-  }, []);
-
-  const totalPresupuestado = data.reduce(
+  // Calcular valores totales
+  const totalPresupuestado = sortedData.reduce(
     (sum, item) => sum + item.presupuestado,
     0
   );
-  const totalEjecutado = data.reduce((sum, item) => sum + item.ejecutado, 0);
-  const sortedData = [...data].sort((a, b) => b.ejecutado - a.ejecutado);
+  const totalEjecutado = sortedData.reduce(
+    (sum, item) => sum + item.ejecutado,
+    0
+  );
 
-  const splitWordsIntoPairs = (text) => {
-    const words = text.split(" ");
-    return words.reduce((result, _, i) => {
-      if (i % 2 === 0) result.push(words.slice(i, i + 2).join(" "));
-      return result;
-    }, []);
-  };
+  // Definir un ancho uniforme para las barras
+  const barWidth = 100; // 🔹 Ancho fijo por barra
+  const chartCanvasWidth = `${sortedData.length * barWidth * 3}px`;
 
   const chartData = {
-    labels: sortedData.map((item) => splitWordsIntoPairs(item.nombre)),
+    labels: sortedData.map((item) => item.nombre),
     datasets: [
       {
         label: "Presupuestado",
         data: sortedData.map((item) => item.presupuestado),
         backgroundColor: "#06cc",
+        barThickness: barWidth * 0.8, // 🔥 Control de grosor uniforme
       },
       {
         label: "Ejecutado",
         data: sortedData.map((item) => item.ejecutado),
         backgroundColor: "#0cfc",
+        barThickness: barWidth * 0.8,
       },
     ],
   };
@@ -53,46 +51,53 @@ const Charts = ({ description, data }) => {
     scales: {
       x: {
         ticks: {
-          font: { size: fontSize }, // 🔥 Aplica tamaño de fuente a las etiquetas en X
-          autoSkip: false, // 🔥 Asegura que no se omitan etiquetas
-          maxRotation: 0, // 🔥 Evita que se roten las etiquetas
+          font: { size: chartFontSizeX },
+          autoSkip: false,
+          maxRotation: 0,
           minRotation: 0,
         },
+        categoryPercentage: 0.9,
+        barPercentage: 0.8,
       },
       y: {
         beginAtZero: true,
         ticks: {
-          font: { size: fontSize }, // 🔥 Aplica tamaño de fuente en el eje Y
-          callback: function (value) {
-            return `Q${value.toLocaleString(undefined, {
+          font: { size: chartFontSizeY },
+          callback: (value) =>
+            `Q${value.toLocaleString(undefined, {
               minimumFractionDigits: 2,
               maximumFractionDigits: 2,
-            })}`;
-          },
+            })}`,
         },
       },
     },
     plugins: {
-      legend: {
-        labels: {
-          font: { size: fontSize }, // 🔥 Aplica tamaño de fuente a la leyenda
-        },
-      },
+      legend: { labels: { font: { size: chartFontSizeX } } },
     },
   };
 
   return (
-    <div className="container-chart">
-      <p className="subtitle-chart">Año 2024</p>
+    <div style={{ width: "100%", margin: "0 auto", textAlign: "center" }}>
+      <p style={{ marginTop: "1em", fontSize: "1em" }}>Año 2024</p>
 
-      {/* Solo renderiza el HTML en la descripción */}
+      {/* Descripción */}
       <p
-        className="politicasP"
-        style={{ marginTop: "1em" }}
+        style={{
+          marginTop: "1em",
+          fontSize: window.innerWidth < 768 ? "1em" : "1em",
+        }}
         dangerouslySetInnerHTML={{ __html: description }}
       />
 
-      <div className="header-chart">
+      {/* Totales */}
+      <div
+        style={{
+          marginTop: "1em",
+          fontSize: window.innerWidth < 768 ? "1em" : "1em",
+          textAlign: "right",
+          marginRight: "1em",
+        }}
+      >
         <p>
           <strong>Proyección total:</strong> <br />Q{" "}
           {totalPresupuestado.toLocaleString(undefined, {
@@ -108,57 +113,22 @@ const Charts = ({ description, data }) => {
         </p>
       </div>
 
-      <div className="bar-chart-wrapper">
-        <div className="bar-chart-container">
+      {/* 📌 Contenedor del gráfico con scroll horizontal */}
+      <div style={{ width: "100%", overflowX: "auto", paddingBottom: "20px" }}>
+        <div
+          style={{
+            width: chartCanvasWidth,
+            height: chartHeight,
+            minWidth: "600px",
+            margin: "0 auto", // 🔹 Asegura que el gráfico esté centrado
+          }}
+        >
           <Bar data={chartData} options={options} />
         </div>
       </div>
 
-      {/* ✅ Aquí reinsertamos las tablas correctamente */}
-      <div className="table-container">
-        <table>
-          <thead>
-            <tr>
-              <th></th>
-              {sortedData.map((item, index) => (
-                <th key={index}>
-                  {splitWordsIntoPairs(item.nombre).map((line, i) => (
-                    <div key={i}>{line}</div>
-                  ))}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td className="left-align">
-                <strong>Presupuesto (Q)</strong>
-              </td>
-              {sortedData.map((item, index) => (
-                <td key={index}>
-                  {item.presupuestado.toLocaleString(undefined, {
-                    minimumFractionDigits: 2,
-                    maximumFractionDigits: 2,
-                  })}
-                </td>
-              ))}
-            </tr>
-            <tr>
-              <td className="left-align">
-                <strong>Ejecutado (Q)</strong>
-              </td>
-              {sortedData.map((item, index) => (
-                <td key={index}>
-                  {item.ejecutado.toLocaleString(undefined, {
-                    minimumFractionDigits: 2,
-                    maximumFractionDigits: 2,
-                  })}
-                </td>
-              ))}
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      {/* 📌 Tabla separada como componente */}
+      <DataTable data={sortedData} />
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import { Divider, Card } from "antd";
+import { Divider } from "antd";
 import "./SobreNosotros.css";
 import FadeInOnScroll from "./FadeInOnScroll";
 import Cvideo from "./Cvideo";
@@ -31,81 +31,70 @@ const SobreNosotrosPage = () => {
         <Divider />
 
         {/* 🔥 POLÍTICAS PÚBLICAS 🔥 */}
-        <Card bordered size="large">
-          <h2 className="title-chart">Políticas Públicas</h2>
-
-          <div className="bar-chart-wrapper">
-            <PoliticasChart />
-          </div>
-        </Card>
+        <h2 className="title-chart">Políticas Públicas</h2>
+        <div className="bar-chart-wrapper">
+          <PoliticasChart />
+        </div>
         <Divider />
 
-        {/* 🔥 TODAS LAS GRÁFICAS UNA BAJO LA OTRA PARA PRUEBA 🔥 */}
-        <Card bordered size="large">
-          <h2 className="title-chart">Infraestructura</h2>
-          <div className="bar-chart-wrapper">
-            <InfraestructuraChart />
-          </div>
-        </Card>
+        {/* 🔥 INFRAESTRUCTURA 🔥 */}
+        <h2 className="title-chart">Infraestructura</h2>
+        <div className="bar-chart-wrapper">
+          <InfraestructuraChart />
+        </div>
         <Divider />
 
-        <Card bordered size="large">
-          <h2 className="title-chart">Red Vial</h2>
-          <div className="bar-chart-wrapper">
-            <RedVialChart />
-          </div>
-        </Card>
+        {/* 🔥 RED VIAL 🔥 */}
+        <h2 className="title-chart">Red Vial</h2>
+        <div className="bar-chart-wrapper">
+          <RedVialChart />
+        </div>
         <Divider />
 
-        <Card bordered size="large">
-          <h2 className="title-chart">Servicios Públicos</h2>
-          <div className="bar-chart-wrapper">
-            <ServiciosChart />
-          </div>
-        </Card>
+        {/* 🔥 SERVICIOS PÚBLICOS 🔥 */}
+        <h2 className="title-chart">Servicios Públicos</h2>
+        <div className="bar-chart-wrapper">
+          <ServiciosChart />
+        </div>
         <Divider />
 
-        <Card bordered size="large">
-          <h2 className="title-chart">Educación</h2>
-          <div className="bar-chart-wrapper">
-            <EducacionChart />
-          </div>
-        </Card>
+        {/* 🔥 EDUCACIÓN 🔥 */}
+        <h2 className="title-chart">Educación</h2>
+        <div className="bar-chart-wrapper">
+          <EducacionChart />
+        </div>
         <Divider />
 
-        <Card bordered size="large">
-          <h2 className="title-chart">Desarrollo Económico</h2>
-          <div className="bar-chart-wrapper">
-            <DesarrolloChart />
-          </div>
-        </Card>
+        {/* 🔥 DESARROLLO ECONÓMICO 🔥 */}
+        <h2 className="title-chart">Desarrollo Económico</h2>
+        <div className="bar-chart-wrapper">
+          <DesarrolloChart />
+        </div>
         <Divider />
 
-        <Card bordered size="large">
-          <h2 className="title-chart">Seguridad</h2>
-          <div className="bar-chart-wrapper">
-            <SeguridadChart />
-          </div>
-        </Card>
+        {/* 🔥 SEGURIDAD 🔥 */}
+        <h2 className="title-chart">Seguridad</h2>
+        <div className="bar-chart-wrapper">
+          <SeguridadChart />
+        </div>
         <Divider />
 
-        <Card bordered size="large">
-          <h2 className="title-chart">Salud</h2>
-          <div className="bar-chart-wrapper">
-            <SaludChart />
-          </div>
-        </Card>
+        {/* 🔥 SALUD 🔥 */}
+        <h2 className="title-chart">Salud</h2>
+        <div className="bar-chart-wrapper">
+          <SaludChart />
+        </div>
         <Divider />
 
-        <Card bordered size="large">
-          <h2 className="title-chart">Medio Ambiente</h2>
-          <div className="bar-chart-wrapper">
-            <MedioAmbienteChart />
-          </div>
-        </Card>
+        {/* 🔥 MEDIO AMBIENTE 🔥 */}
+        <h2 className="title-chart">Medio Ambiente</h2>
+        <div className="bar-chart-wrapper">
+          <MedioAmbienteChart />
+        </div>
         <Divider />
       </FadeInOnScroll>
 
+      {/* 🔹 Video */}
       <FadeInOnScroll offset={200}>
         <div>
           <Cvideo />
@@ -113,6 +102,8 @@ const SobreNosotrosPage = () => {
       </FadeInOnScroll>
 
       <Divider />
+
+      {/* 🔹 Mensaje final */}
       <FadeInOnScroll offset={200}>
         <h2>¡ES UN HONOR SERVIRTE!</h2>
         <p>
