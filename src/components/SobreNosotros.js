@@ -1,18 +1,33 @@
-import React from "react";
-import { Divider } from "antd";
+import React, { lazy, Suspense } from "react";
+import { Divider, Spin } from "antd";
 import "./SobreNosotros.css";
 import FadeInOnScroll from "./FadeInOnScroll";
 import Cvideo from "./Cvideo";
-import PoliticasChart from "./charts/politicasChart";
-import InfraestructuraChart from "./charts/InfraestructuraChart";
-import EducacionChart from "./charts/EducacionChart";
-import RedVialChart from "./charts/RedVialChart";
-import DesarrolloChart from "./charts/DesarrolloChart";
-import ServiciosChart from "./charts/ServiciosChart";
-import SeguridadChart from "./charts/SeguridadChart";
-import SaludChart from "./charts/SaludChart";
-import MedioAmbienteChart from "./charts/MedioAmbienteChart";
-import ImageCarousel from "./charts/ImageCarousel";
+
+// 🔹 Lazy load de todos los charts y del carrusel
+const PoliticasChart = lazy(() => import("./charts/PoliticasChart"));
+const InfraestructuraChart = lazy(() =>
+  import("./charts/InfraestructuraChart")
+);
+const EducacionChart = lazy(() => import("./charts/EducacionChart"));
+const RedVialChart = lazy(() => import("./charts/RedVialChart"));
+const DesarrolloChart = lazy(() => import("./charts/DesarrolloChart"));
+const ServiciosChart = lazy(() => import("./charts/ServiciosChart"));
+const SeguridadChart = lazy(() => import("./charts/SeguridadChart"));
+const SaludChart = lazy(() => import("./charts/SaludChart"));
+const MedioAmbienteChart = lazy(() => import("./charts/MedioAmbienteChart"));
+const ImageCarousel = lazy(() => import("./charts/ImageCarousel"));
+
+// 🔹 Loader reutilizable
+const Loader = ({ children }) => (
+  <Suspense
+    fallback={
+      <Spin size="large" style={{ display: "block", margin: "2rem auto" }} />
+    }
+  >
+    {children}
+  </Suspense>
+);
 
 const SobreNosotrosPage = () => {
   return (
@@ -31,73 +46,84 @@ const SobreNosotrosPage = () => {
         </p>
         <Divider />
 
-        {/* 🔥 POLÍTICAS PÚBLICAS 🔥 */}
         <h2 className="title-chart">Políticas Públicas</h2>
         <div className="bar-chart-wrapper">
-          <PoliticasChart />
+          <Loader>
+            <PoliticasChart />
+          </Loader>
         </div>
         <Divider />
 
-        {/* 🔥 INFRAESTRUCTURA 🔥 */}
         <h2 className="title-chart">Infraestructura</h2>
         <div className="bar-chart-wrapper">
-          <InfraestructuraChart />
+          <Loader>
+            <InfraestructuraChart />
+          </Loader>
         </div>
         <Divider />
 
-        {/* 🔥 RED VIAL 🔥 */}
         <h2 className="title-chart">Red Vial</h2>
         <div className="bar-chart-wrapper">
-          <RedVialChart />
+          <Loader>
+            <RedVialChart />
+          </Loader>
         </div>
         <Divider />
 
-        {/* 🔥 SERVICIOS PÚBLICOS 🔥 */}
         <h2 className="title-chart">Servicios Públicos</h2>
         <div className="bar-chart-wrapper">
-          <ServiciosChart />
+          <Loader>
+            <ServiciosChart />
+          </Loader>
         </div>
         <Divider />
 
-        {/* 🔥 EDUCACIÓN 🔥 */}
         <h2 className="title-chart">Educación</h2>
         <div className="bar-chart-wrapper">
-          <EducacionChart />
+          <Loader>
+            <EducacionChart />
+          </Loader>
         </div>
         <Divider />
 
-        {/* 🔥 DESARROLLO ECONÓMICO 🔥 */}
         <h2 className="title-chart">Desarrollo Económico</h2>
         <div className="bar-chart-wrapper">
-          <DesarrolloChart />
+          <Loader>
+            <DesarrolloChart />
+          </Loader>
         </div>
         <Divider />
 
-        {/* 🔥 SEGURIDAD 🔥 */}
         <h2 className="title-chart">Seguridad</h2>
         <div className="bar-chart-wrapper">
-          <SeguridadChart />
+          <Loader>
+            <SeguridadChart />
+          </Loader>
         </div>
         <Divider />
 
-        {/* 🔥 SALUD 🔥 */}
         <h2 className="title-chart">Salud</h2>
         <div className="bar-chart-wrapper">
-          <SaludChart />
+          <Loader>
+            <SaludChart />
+          </Loader>
         </div>
         <Divider />
 
-        {/* 🔥 MEDIO AMBIENTE 🔥 */}
         <h2 className="title-chart">Medio Ambiente</h2>
         <div className="bar-chart-wrapper">
-          <MedioAmbienteChart />
+          <Loader>
+            <MedioAmbienteChart />
+          </Loader>
         </div>
         <Divider />
       </FadeInOnScroll>
 
-      <ImageCarousel start={65} end={73} />
+      {/* 🔹 Carrusel de imágenes con lazy load también */}
+      <Loader>
+        <ImageCarousel start={65} end={73} />
+      </Loader>
 
-      {/* 🔹 Video */}
       <FadeInOnScroll offset={200}>
         <div>
           <Cvideo />
@@ -106,7 +132,6 @@ const SobreNosotrosPage = () => {
 
       <Divider />
 
-      {/* 🔹 Mensaje final */}
       <FadeInOnScroll offset={200}>
         <h2>¡ES UN HONOR SERVIRTE!</h2>
         <p>

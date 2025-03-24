@@ -10,9 +10,8 @@ const importImages = (start, end) => {
 
 const ImageCarousel = ({ start, end }) => {
   const images = importImages(start, end);
-  const carouselRef = useRef(null); // 🔹 Referencia para controlar el carrusel
+  const carouselRef = useRef(null);
 
-  // Funciones para los botones
   const goToPrev = () => carouselRef.current.prev();
   const goToNext = () => carouselRef.current.next();
 
@@ -22,14 +21,13 @@ const ImageCarousel = ({ start, end }) => {
     >
       <Card
         title="Desliza para ver más o toca la imagen para ampliar 🤳"
-        bodyStyle={{ padding: 0 }} // 🔹 Elimina el padding del Card.Body
+        bodyStyle={{ padding: 0 }}
         style={{
           width: "100%",
           textAlign: "center",
           borderRadius: "10px",
         }}
       >
-        {/* 🔹 Carousel con autoplay y botones de navegación */}
         <Carousel
           ref={carouselRef}
           autoplay
@@ -49,7 +47,8 @@ const ImageCarousel = ({ start, end }) => {
               <Image
                 src={src}
                 alt={`Imagen ${index + start}`}
-                height={window.innerWidth < 768 ? 400 : 700} // 🔥 Ajuste dinámico según la pantalla
+                loading="lazy" // 💤 Lazy loading activado
+                height={window.innerWidth < 768 ? 400 : 700}
                 width="auto"
                 style={{
                   borderRadius: "5px",
@@ -61,7 +60,6 @@ const ImageCarousel = ({ start, end }) => {
           ))}
         </Carousel>
 
-        {/* 🔹 Botones debajo de la imagen */}
         <div
           style={{
             display: "flex",
@@ -79,7 +77,6 @@ const ImageCarousel = ({ start, end }) => {
         </div>
       </Card>
 
-      {/* 🔹 Estilos personalizados */}
       <style>
         {`
           .custom-dots li button {
