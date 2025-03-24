@@ -31,7 +31,7 @@ const ImageCarousel = ({ start, end }) => {
         <Carousel
           ref={carouselRef}
           autoplay
-          autoplaySpeed={3000}
+          autoplaySpeed={2000}
           dots={{ className: "custom-dots" }}
           effect="fade"
         >
