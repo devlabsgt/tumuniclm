@@ -200,6 +200,12 @@ const CustomNavbar = () => {
               Información pública
             </Button>
           </Tooltip>
+
+          <a href="https://app.tumuniclm.com">
+            <Button type="primary" className="botonMenu">
+              App Municipal
+            </Button>
+          </a>
         </div>
         <Memoria />
 
