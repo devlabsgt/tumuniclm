@@ -3,11 +3,15 @@ import Charts from "./Charts";
 import ImageCarousel from "./ImageCarousel";
 
 const data = [
-  { nombre: "Capacitaciones", presupuestado: 394000.0, ejecutado: 530444.91 },
-  { nombre: "Deportes", presupuestado: 392000.0, ejecutado: 474804.79 },
-  { nombre: "Música y Arte", presupuestado: 394000.0, ejecutado: 382966.0 },
-  { nombre: "MINEDUC", presupuestado: 1062336.0, ejecutado: 1543054.96 },
-  { nombre: "CMED", presupuestado: 486000.0, ejecutado: 537779.02 },
+  { nombre: "Primaria MINEDUC", presupuestado: 674000.00, ejecutado: 257260.72 },
+  { nombre: "Preprimaria MINEDUC", presupuestado: 525000.00, ejecutado: 28920.14 },
+  { nombre: "Básico MINEDUC", presupuestado: 425000.00, ejecutado: 51120.37 },
+  { nombre: "Diversificado CMED", presupuestado: 590000.00, ejecutado: 236914.04 },
+  { nombre: "Diversificado MINEDUC", presupuestado: 235000.00, ejecutado: 11456.39 },
+  { nombre: "Parque Escuela", presupuestado: 95000.00, ejecutado: 24130.60 },
+  { nombre: "Capacitación Educación", presupuestado: 490000.00, ejecutado: 168425.99 },
+  { nombre: "Música y Arte", presupuestado: 450000.00, ejecutado: 126168.24 },
+  { nombre: "Deportes Municipales", presupuestado: 451000.00, ejecutado: 149149.48 },
 ];
 
 const EducacionChart = () => {

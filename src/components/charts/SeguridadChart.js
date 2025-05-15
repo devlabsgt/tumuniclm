@@ -5,8 +5,8 @@ import ImageCarousel from "./ImageCarousel";
 const data = [
   {
     nombre: "Ordenamiento vial y seguridad ciudadana",
-    presupuestado: 946000.0,
-    ejecutado: 991708.27,
+    presupuestado: 940000.0,
+    ejecutado: 312833.51,
   },
 ];
 

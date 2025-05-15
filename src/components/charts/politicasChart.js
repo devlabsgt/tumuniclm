@@ -1,44 +1,64 @@
 import React from "react";
 import Charts from "./Charts";
-import ImageCarousel from "./ImageCarousel"; // 🔹 Importamos el nuevo componente
 
 const data = [
   {
     nombre: "Actividades Centrales",
-    presupuestado: 7213200,
-    ejecutado: 6878313.37,
+    presupuestado: 7948800,
+    ejecutado: 2697309.55,
   },
-  { nombre: "Educación", presupuestado: 2728336, ejecutado: 3469049.68 },
-  { nombre: "Red Vial", presupuestado: 9360300, ejecutado: 8697142.48 },
   {
-    nombre: "Servicios Públicos",
-    presupuestado: 1551664,
-    ejecutado: 1914036.23,
+    nombre: "Política Educativa",
+    presupuestado: 3935000,
+    ejecutado: 1053545.97,
   },
-  { nombre: "Medio Ambiente", presupuestado: 2330200, ejecutado: 2917683.25 },
   {
-    nombre: "Desarrollo Económico Local",
-    presupuestado: 919300,
-    ejecutado: 839866.54,
+    nombre: "Política Red Vial",
+    presupuestado: 7360500,
+    ejecutado: 1858295.08,
   },
-  { nombre: "Seguridad", presupuestado: 946000, ejecutado: 991708.27 },
-  { nombre: "Salud", presupuestado: 84500, ejecutado: 129575.82 },
   {
-    nombre: "Obras de Infraestructura",
-    presupuestado: 10918000,
-    ejecutado: 7068092.67,
+    nombre: "Política Desarrollo Económico Local",
+    presupuestado: 2473000,
+    ejecutado: 1490780.44,
+  },
+  {
+    nombre: "Política de Servicios Públicos",
+    presupuestado: 2001500,
+    ejecutado: 414518.68,
+  },
+  {
+    nombre: "Política de Seguridad",
+    presupuestado: 940000,
+    ejecutado: 312833.51,
+  },
+  {
+    nombre: "Política de Salud",
+    presupuestado: 140000,
+    ejecutado: 37979.62,
   },
   {
     nombre: "Asistencia Técnica DMP",
-    presupuestado: 442000,
-    ejecutado: 501877.8,
+    presupuestado: 574000,
+    ejecutado: 77452.05,
   },
   {
-    nombre: "Préstamos y convenios de pago",
-    presupuestado: 2080000,
-    ejecutado: 1729422.6,
+    nombre: "Política de Medio Ambiente",
+    presupuestado: 2997500,
+    ejecutado: 886488.34,
+  },
+  {
+    nombre: "Obras de Infraestructura",
+    presupuestado: 6872700,
+    ejecutado: 4670489.69,
+  },
+  {
+    nombre: "Préstamos y Convenios de Pago",
+    presupuestado: 2922000,
+    ejecutado: 1033216.20,
   },
 ];
+
 
 const PoliticasChart = () => {
   return (

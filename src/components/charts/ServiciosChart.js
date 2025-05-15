@@ -3,17 +3,14 @@ import Charts from "./Charts";
 import ImageCarousel from "./ImageCarousel";
 
 const data = [
-  { nombre: "Cementerio", presupuestado: 89500.0, ejecutado: 102961.13 },
-  { nombre: "Mercado", presupuestado: 185400.0, ejecutado: 272244.5 },
-  { nombre: "Agua potable", presupuestado: 489264.0, ejecutado: 722032.49 },
-  { nombre: "Inst. Deportivas", presupuestado: 308500.0, ejecutado: 463420.7 },
-  {
-    nombre: "Alumbrado público",
-    presupuestado: 344000.0,
-    ejecutado: 308355.91,
-  },
-  { nombre: "Alcantarillado", presupuestado: 135000.0, ejecutado: 45021.5 },
+  { nombre: "Sistema de Agua Potable", presupuestado: 769500.00, ejecutado: 139855.27 },
+  { nombre: "Saneamiento Mercado Municipal", presupuestado: 252000.00, ejecutado: 61654.02 },
+  { nombre: "Cementerio", presupuestado: 100000.00, ejecutado: 27400.70 },
+  { nombre: "Alcantarillado", presupuestado: 100000.00, ejecutado: 8405.00 },
+  { nombre: "Alumbrado Público", presupuestado: 415000.00, ejecutado: 68974.37 },
+  { nombre: "Instalaciones Deportivas", presupuestado: 365000.00, ejecutado: 108229.32 },
 ];
+
 
 const ServiciosChart = () => {
   return (

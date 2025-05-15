@@ -3,53 +3,16 @@ import Charts from "./Charts";
 import ImageCarousel from "./ImageCarousel"; // 🔹 Importamos el nuevo componente
 
 const data = [
-  { nombre: "Pozo Valeriano", presupuestado: 31000, ejecutado: 683110.48 },
-  {
-    nombre: "Calle y drenaje La Loma",
-    presupuestado: 454000,
-    ejecutado: 304681.2,
-  },
-  {
-    nombre: "Calle y drenaje Cabecera",
-    presupuestado: 276000,
-    ejecutado: 160993,
-  },
-  {
-    nombre: "Escuela Monte Barroso",
-    presupuestado: 87500,
-    ejecutado: 311212.5,
-  },
-  {
-    nombre: "Líneas eléctricas El Aguajal",
-    presupuestado: 726000,
-    ejecutado: 409171.6,
-  },
-  {
-    nombre: "Parada de buses La Ermita",
-    presupuestado: 254000,
-    ejecutado: 253200,
-  },
-  {
-    nombre: "Pavimento San Antonio",
-    presupuestado: 2007000,
-    ejecutado: 1818740,
-  },
-  {
-    nombre: "Construcción Gimnasio",
-    presupuestado: 4800000,
-    ejecutado: 2400000,
-  },
-  {
-    nombre: "Pozo El Solapado",
-    presupuestado: 599995.06,
-    ejecutado: 599995.06,
-  },
-  {
-    nombre: "Escuela El Jícaro",
-    presupuestado: 126988.83,
-    ejecutado: 126988.83,
-  },
+  { nombre: "Pozo Valeriano", presupuestado: 500.00, ejecutado: 31582.77 },
+  { nombre: "Pozo Guacamayas", presupuestado: 200.00, ejecutado: 784665.00 },
+  { nombre: "Calle y Drenaje La Loma", presupuestado: 250000.00, ejecutado: 149296.80 },
+  { nombre: "Líneas Eléctricas Los Planes", presupuestado: 1600000.00, ejecutado: 0 },
+  { nombre: "Líneas Eléctricas El Aguajal", presupuestado: 160000.00, ejecutado: 0 },
+  { nombre: "Pavimento San Antonio", presupuestado: 442000.00, ejecutado: 0 },
+  { nombre: "Gimnasio Municipal", presupuestado: 3120000.00, ejecutado: 1044130.18 },
+  { nombre: "Puente Valle Arriba", presupuestado: 1300000.00, ejecutado: 2660814.94 },
 ];
+
 
 const InfraestructuraChart = () => {
   return (

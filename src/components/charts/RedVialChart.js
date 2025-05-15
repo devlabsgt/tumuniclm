@@ -5,8 +5,8 @@ import ImageCarousel from "./ImageCarousel"; // 🔹 Importamos el nuevo compone
 const data = [
   {
     nombre: "Conservación de carreteras",
-    presupuestado: 9360300.0,
-    ejecutado: 8697142.48,
+    presupuestado: 7360500.0,
+    ejecutado: 1858295.08,
   },
 ];
 

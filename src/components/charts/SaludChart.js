@@ -5,8 +5,8 @@ import ImageCarousel from "./ImageCarousel";
 const data = [
   {
     nombre: "Apoyo a la salud y Farmacia",
-    presupuestado: 84500.0,
-    ejecutado: 129575.82,
+    presupuestado: 140000.0,
+    ejecutado: 37979.62,
   },
 ];
 

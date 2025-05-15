@@ -3,14 +3,13 @@ import Charts from "./Charts";
 import ImageCarousel from "./ImageCarousel";
 
 const data = [
-  { nombre: "Reforestación", presupuestado: 418000.0, ejecutado: 728537.34 },
-  { nombre: "Forestación", presupuestado: 339200.0, ejecutado: 316554.87 },
-  {
-    nombre: "Recolección desechos sólidos",
-    presupuestado: 1337000.0,
-    ejecutado: 1872591.04,
-  },
+  { nombre: "Reforestación", presupuestado: 490000.00, ejecutado: 147122.02 },
+  { nombre: "Huertos Mixtos", presupuestado: 550000.00, ejecutado: 92618.48 },
+  { nombre: "Tratamiento Desechos", presupuestado: 236000.00, ejecutado: 0 },
+  { nombre: "Recolección Desechos", presupuestado: 1646500.00, ejecutado: 634998.70 },
+  { nombre: "Gestión Riesgo Desastres", presupuestado: 75000.00, ejecutado: 11749.14 },
 ];
+
 
 const MedioAmbienteChart = () => {
   return (

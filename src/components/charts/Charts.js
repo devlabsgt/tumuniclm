@@ -7,9 +7,12 @@ const Charts = ({
   description,
   data,
   chartHeight = "500px",
-  chartFontSizeX = 14,
-  chartFontSizeY = 14,
 }) => {
+  // 🔹 Detectar si es móvil
+  const isMobile = window.innerWidth < 768;
+  const fontSizeX = isMobile ? 10 : 14;
+  const fontSizeY = isMobile ? 10 : 14;
+
   // Ordenar datos por ejecución de mayor a menor
   const sortedData = [...data].sort((a, b) => b.ejecutado - a.ejecutado);
 
@@ -51,7 +54,7 @@ const Charts = ({
     scales: {
       x: {
         ticks: {
-          font: { size: chartFontSizeX },
+          font: { size: fontSizeX },
           autoSkip: false,
           maxRotation: 0,
           minRotation: 0,
@@ -62,7 +65,7 @@ const Charts = ({
       y: {
         beginAtZero: true,
         ticks: {
-          font: { size: chartFontSizeY },
+          font: { size: fontSizeY },
           callback: (value) =>
             `Q${value.toLocaleString(undefined, {
               minimumFractionDigits: 2,
@@ -72,19 +75,19 @@ const Charts = ({
       },
     },
     plugins: {
-      legend: { labels: { font: { size: chartFontSizeX } } },
+      legend: { labels: { font: { size: fontSizeX } } },
     },
   };
 
   return (
     <div style={{ width: "100%", margin: "0 auto", textAlign: "center" }}>
-      <p style={{ marginTop: "1em", fontSize: "1em" }}>Año 2024</p>
+      <p style={{ marginTop: "1em", fontSize: "1em" }}>1er. Cuatrimestre 2025</p>
 
       {/* Descripción */}
       <p
         style={{
           marginTop: "1em",
-          fontSize: window.innerWidth < 768 ? "1em" : "1em",
+          fontSize: isMobile ? "1em" : "1em",
         }}
         dangerouslySetInnerHTML={{ __html: description }}
       />
@@ -93,7 +96,7 @@ const Charts = ({
       <div
         style={{
           marginTop: "1em",
-          fontSize: window.innerWidth < 768 ? "1em" : "1em",
+          fontSize: isMobile ? "1em" : "1em",
           textAlign: "right",
           marginRight: "1em",
         }}
@@ -120,7 +123,7 @@ const Charts = ({
             width: chartCanvasWidth,
             height: chartHeight,
             minWidth: "600px",
-            margin: "0 auto", // 🔹 Asegura que el gráfico esté centrado
+            margin: "0 auto",
           }}
         >
           <Bar data={chartData} options={options} />

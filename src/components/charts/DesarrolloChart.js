@@ -3,11 +3,11 @@ import Charts from "./Charts";
 import ImageCarousel from "./ImageCarousel";
 
 const data = [
-  { nombre: "Dotación 2023", presupuestado: 700000.0, ejecutado: 677524.0 },
+  { nombre: "Fertilizante 2025", presupuestado: 2250000.0, ejecutado: 1417500.0 },
   {
     nombre: "COINCEP",
-    presupuestado: 219300.0,
-    ejecutado: 162342.54,
+    presupuestado: 223000.0,
+    ejecutado: 73280.00,
   },
 ];
 
