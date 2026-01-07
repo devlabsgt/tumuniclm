@@ -10,7 +10,7 @@ const images = [
   {
     src: "/img/carrusel/2.webp",
     link: "/memoria2024",
-    text: "Haz click en la siguiente imagen para ver la Memoria de Labores 2024",
+    text: "Haz click en la siguiente imagen para ver la Memoria de Labores 2025",
   },
 ];
 

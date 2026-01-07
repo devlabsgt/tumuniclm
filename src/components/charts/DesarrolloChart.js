@@ -3,11 +3,15 @@ import Charts from "./Charts";
 import ImageCarousel from "./ImageCarousel";
 
 const data = [
-  { nombre: "Fertilizante 2025", presupuestado: 2250000.0, ejecutado: 1417500.0 },
+  { 
+    nombre: "Fertilizante 2025", 
+    presupuestado: 2250000.0, 
+    ejecutado: 2205000.0 
+  },
   {
     nombre: "COINCEP",
     presupuestado: 223000.0,
-    ejecutado: 73280.00,
+    ejecutado: 258921.17, 
   },
 ];
 

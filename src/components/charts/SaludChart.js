@@ -6,7 +6,7 @@ const data = [
   {
     nombre: "Apoyo a la salud y Farmacia",
     presupuestado: 140000.0,
-    ejecutado: 37979.62,
+    ejecutado: 135786.82, // Actualizado según la Política de Salud del CSV
   },
 ];
 

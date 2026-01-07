@@ -4,61 +4,60 @@ import Charts from "./Charts";
 const data = [
   {
     nombre: "Actividades Centrales",
-    presupuestado: 7948800,
-    ejecutado: 2697309.55,
+    presupuestado: 7948800.0,
+    ejecutado: 7470442.29,
   },
   {
     nombre: "Política Educativa",
-    presupuestado: 3935000,
-    ejecutado: 1053545.97,
+    presupuestado: 3935000.0,
+    ejecutado: 4082053.87,
   },
   {
     nombre: "Política Red Vial",
-    presupuestado: 7360500,
-    ejecutado: 1858295.08,
+    presupuestado: 7360500.0,
+    ejecutado: 7836798.66,
   },
   {
     nombre: "Política Desarrollo Económico Local",
-    presupuestado: 2473000,
-    ejecutado: 1490780.44,
+    presupuestado: 2473000.0,
+    ejecutado: 2463921.17,
   },
   {
     nombre: "Política de Servicios Públicos",
-    presupuestado: 2001500,
-    ejecutado: 414518.68,
+    presupuestado: 2001500.0,
+    ejecutado: 1645049.39,
   },
   {
     nombre: "Política de Seguridad",
-    presupuestado: 940000,
-    ejecutado: 312833.51,
+    presupuestado: 940000.0,
+    ejecutado: 1015594.72,
   },
   {
     nombre: "Política de Salud",
-    presupuestado: 140000,
-    ejecutado: 37979.62,
+    presupuestado: 140000.0,
+    ejecutado: 135786.82,
   },
   {
     nombre: "Asistencia Técnica DMP",
-    presupuestado: 574000,
-    ejecutado: 77452.05,
+    presupuestado: 574000.0,
+    ejecutado: 311475.24,
   },
   {
     nombre: "Política de Medio Ambiente",
-    presupuestado: 2997500,
-    ejecutado: 886488.34,
+    presupuestado: 2997500.0,
+    ejecutado: 2472261.9,
   },
   {
     nombre: "Obras de Infraestructura",
-    presupuestado: 6872700,
-    ejecutado: 4670489.69,
+    presupuestado: 6872700.0,
+    ejecutado: 11042467.57,
   },
   {
     nombre: "Préstamos y Convenios de Pago",
-    presupuestado: 2922000,
-    ejecutado: 1033216.20,
+    presupuestado: 2922000.0,
+    ejecutado: 3035611.72,
   },
 ];
-
 
 const PoliticasChart = () => {
   return (
@@ -71,7 +70,6 @@ const PoliticasChart = () => {
         chartHeight={window.innerWidth < 768 ? "500px" : "600px"}
         chartCanvasWidth={window.innerWidth < 768 ? "350px" : "200px"}
       />
-      {/* 🔹 Llamamos al nuevo componente y le mandamos los números de inicio y fin */}
     </div>
   );
 };

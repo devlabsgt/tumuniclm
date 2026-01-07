@@ -3,14 +3,37 @@ import Charts from "./Charts";
 import ImageCarousel from "./ImageCarousel";
 
 const data = [
-  { nombre: "Sistema de Agua Potable", presupuestado: 769500.00, ejecutado: 139855.27 },
-  { nombre: "Saneamiento Mercado Municipal", presupuestado: 252000.00, ejecutado: 61654.02 },
-  { nombre: "Cementerio", presupuestado: 100000.00, ejecutado: 27400.70 },
-  { nombre: "Alcantarillado", presupuestado: 100000.00, ejecutado: 8405.00 },
-  { nombre: "Alumbrado Público", presupuestado: 415000.00, ejecutado: 68974.37 },
-  { nombre: "Instalaciones Deportivas", presupuestado: 365000.00, ejecutado: 108229.32 },
+  { 
+    nombre: "Sistema de Agua Potable", 
+    presupuestado: 769500.00, 
+    ejecutado: 555846.61 // Actualizado
+  },
+  { 
+    nombre: "Saneamiento Mercado Municipal", 
+    presupuestado: 252000.00, 
+    ejecutado: 183318.55 // Actualizado
+  },
+  { 
+    nombre: "Cementerio", 
+    presupuestado: 100000.00, 
+    ejecutado: 56702.65 // Actualizado
+  },
+  { 
+    nombre: "Alcantarillado", 
+    presupuestado: 100000.00, 
+    ejecutado: 84754.00 // Actualizado
+  },
+  { 
+    nombre: "Alumbrado Público", 
+    presupuestado: 415000.00, 
+    ejecutado: 249294.32 // Actualizado
+  },
+  { 
+    nombre: "Instalaciones Deportivas", 
+    presupuestado: 365000.00, 
+    ejecutado: 515133.26 // Actualizado
+  },
 ];
-
 
 const ServiciosChart = () => {
   return (

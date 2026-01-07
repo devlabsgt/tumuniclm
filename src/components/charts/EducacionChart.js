@@ -3,15 +3,51 @@ import Charts from "./Charts";
 import ImageCarousel from "./ImageCarousel";
 
 const data = [
-  { nombre: "Primaria MINEDUC", presupuestado: 674000.00, ejecutado: 257260.72 },
-  { nombre: "Preprimaria MINEDUC", presupuestado: 525000.00, ejecutado: 28920.14 },
-  { nombre: "Básico MINEDUC", presupuestado: 425000.00, ejecutado: 51120.37 },
-  { nombre: "Diversificado CMED", presupuestado: 590000.00, ejecutado: 236914.04 },
-  { nombre: "Diversificado MINEDUC", presupuestado: 235000.00, ejecutado: 11456.39 },
-  { nombre: "Parque Escuela", presupuestado: 95000.00, ejecutado: 24130.60 },
-  { nombre: "Capacitación Educación", presupuestado: 490000.00, ejecutado: 168425.99 },
-  { nombre: "Música y Arte", presupuestado: 450000.00, ejecutado: 126168.24 },
-  { nombre: "Deportes Municipales", presupuestado: 451000.00, ejecutado: 149149.48 },
+  { 
+    nombre: "Primaria MINEDUC", 
+    presupuestado: 674000.00, 
+    ejecutado: 1198758.01 // Actualizado según CSV
+  },
+  { 
+    nombre: "Preprimaria MINEDUC", 
+    presupuestado: 525000.00, 
+    ejecutado: 232534.59 // Actualizado según CSV
+  },
+  { 
+    nombre: "Básico MINEDUC", 
+    presupuestado: 425000.00, 
+    ejecutado: 351796.92 // Actualizado según CSV
+  },
+  { 
+    nombre: "Diversificado CMED", 
+    presupuestado: 590000.00, 
+    ejecutado: 637081.84 // Actualizado según CSV
+  },
+  { 
+    nombre: "Diversificado MINEDUC", 
+    presupuestado: 235000.00, 
+    ejecutado: 54328.83 // Actualizado según CSV
+  },
+  { 
+    nombre: "Parque Escuela", 
+    presupuestado: 95000.00, 
+    ejecutado: 72178.60 // Actualizado según CSV
+  },
+  { 
+    nombre: "Capacitación Educación", 
+    presupuestado: 490000.00, 
+    ejecutado: 520243.29 // Actualizado según CSV
+  },
+  { 
+    nombre: "Música y Arte", 
+    presupuestado: 450000.00, 
+    ejecutado: 483245.17 // Actualizado según CSV
+  },
+  { 
+    nombre: "Deportes Municipales", 
+    presupuestado: 451000.00, 
+    ejecutado: 531886.62 // Actualizado según CSV
+  },
 ];
 
 const EducacionChart = () => {

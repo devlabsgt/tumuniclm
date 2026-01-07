@@ -6,7 +6,7 @@ const data = [
   {
     nombre: "Ordenamiento vial y seguridad ciudadana",
     presupuestado: 940000.0,
-    ejecutado: 312833.51,
+    ejecutado: 1015594.72, // Actualizado según cierre anual CSV
   },
 ];
 
