@@ -4,8 +4,7 @@ import "./SobreNosotros.css";
 import FadeInOnScroll from "./FadeInOnScroll";
 import Cvideo from "./Cvideo";
 
-// 🔹 Lazy load de todos los charts y del carrusel
-const PoliticasChart = lazy(() => import("./charts/PoliticasChart"));
+const PoliticasChart = lazy(() => import("./charts/politicasChart"));
 const InfraestructuraChart = lazy(() =>
   import("./charts/InfraestructuraChart")
 );
@@ -147,3 +146,5 @@ const SobreNosotrosPage = () => {
 };
 
 export default SobreNosotrosPage;
+
+
