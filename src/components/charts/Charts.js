@@ -5,8 +5,7 @@ import DataTable from "./DataTable";
 
 const Charts = ({
   description,
-  data,
-  chartHeight = "500px",
+  data
 }) => {
   const isMobile = window.innerWidth < 768;
   const fontSizeX = isMobile ? 10 : 14;
@@ -14,97 +13,120 @@ const Charts = ({
 
   const sortedData = [...data].sort((a, b) => b.ejecutado - a.ejecutado);
 
-  const totalPresupuestado = sortedData.reduce((sum, item) => sum + item.presupuestado, 0);
-  const totalEjecutado = sortedData.reduce((sum, item) => sum + item.ejecutado, 0);
+  const barWidth = 55;
+  const chartCanvasWidth = `${sortedData.length * barWidth * 2.5}px`;
 
-  // Cálculo del porcentaje
-  const porcentajeTotal = totalPresupuestado > 0 
-    ? (totalEjecutado / totalPresupuestado) * 100 
-    : 0;
-
-  const barWidth = 100;
-  const chartCanvasWidth = `${sortedData.length * barWidth * 3}px`;
+  const formatLabel = (label) => {
+    if (!label) return "";
+    const words = label.split(" ");
+    if (words.length <= 1) return label;
+    const middle = Math.ceil(words.length / 2);
+    const line1 = words.slice(0, middle).join(" ");
+    const line2 = words.slice(middle).join(" ");
+    return [line1, line2];
+  };
 
   const chartData = {
-    labels: sortedData.map((item) => item.nombre),
+    labels: sortedData.map((item) => formatLabel(item.nombre)),
     datasets: [
       {
         label: "Presupuestado",
         data: sortedData.map((item) => item.presupuestado),
         backgroundColor: "#06cc",
-        barThickness: barWidth * 0.8,
+        barThickness: barWidth,
       },
       {
         label: "Ejecutado",
         data: sortedData.map((item) => item.ejecutado),
         backgroundColor: "#0cfc",
-        barThickness: barWidth * 0.8,
+        barThickness: barWidth,
       },
     ],
   };
 
-  const options = {
-    responsive: true,
-    maintainAspectRatio: false,
-    scales: {
-      x: {
-        ticks: { font: { size: fontSizeX }, autoSkip: false },
-        categoryPercentage: 0.9,
-        barPercentage: 0.8,
+const options = {
+  responsive: true,
+  maintainAspectRatio: false,
+  scales: {
+    x: {
+      ticks: { 
+        font: { 
+          size: fontSizeX, 
+        }, 
+        autoSkip: false,
+        color: "#000",
+        maxRotation: 0,
+        minRotation: 0,
       },
-      y: {
-        beginAtZero: true,
-        ticks: {
-          font: { size: fontSizeY },
-          callback: (value) => `Q${value.toLocaleString()}`,
-        },
+      categoryPercentage: 0.9,
+      barPercentage: 1.0,
+      grid: {
+        display: false
+      }
+    },
+    y: {
+      beginAtZero: true,
+      ticks: {
+        font: { size: fontSizeY },
+        color: "#000",
+        callback: (value) => `Q${value.toLocaleString()}`,
       },
+      grid: {
+        color: "#e2e8f0",
+      }
     },
-    plugins: {
-      legend: { labels: { font: { size: fontSizeX } } },
+  },
+  plugins: {
+    legend: { 
+      position: 'top',
+      labels: { 
+        font: { 
+          size: fontSizeX, 
+          weight: "bold" 
+        }, 
+        color: "#000" 
+      } 
     },
-  };
+    tooltip: {
+      padding: 12,
+      titleFont: { size: 16 },
+      bodyFont: { size: 14 },
+      callbacks: {
+        label: (context) => {
+          let label = context.dataset.label || '';
+          if (label) label += ': ';
+          if (context.parsed.y !== null) {
+            label += new Intl.NumberFormat('es-GT', { 
+              style: 'currency', 
+              currency: 'GTQ' 
+            }).format(context.parsed.y);
+          }
+          return label;
+        }
+      }
+    }
+  },
+};
 
   return (
     <div style={{ width: "100%", margin: "0 auto", textAlign: "center" }}>
-      <p style={{ marginTop: "1em", fontSize: "1em" }}>Año 2025</p>
+      <div style={{ padding: "30px", backgroundColor: "white" }}>
+        
+        <p style={{ fontSize: "1.4em", fontWeight: "bold", color: "#333" }}>Año 2025</p>
 
-      <p
-        style={{ marginTop: "1em", fontSize: "1em", padding: "0 10px" }}
-        dangerouslySetInnerHTML={{ __html: description }}
-      />
+        <p
+          style={{ marginTop: "1em", fontSize: "1.1em", padding: "0 20px", color: "#555" }}
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
 
-      <div style={{ display: "flex", justifyContent: "center", marginTop: "1.5em", width: "100%" }}>
-        <table style={{ borderCollapse: "collapse", border: "1px solid #ddd", fontSize: isMobile ? "0.85em" : "1.1em", boxShadow: "0px 2px 5px rgba(0,0,0,0.05)" }}>
-          <thead>
-            <tr style={{ backgroundColor: "#f8f9fa" }}>
-              <th style={{ padding: "8px 20px", border: "1px solid #ddd", color: "#555" }}>Proyección total</th>
-              <th style={{ padding: "8px 20px", border: "1px solid #ddd", color: "#555" }}>Total ejecutado</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style={{ padding: "12px 20px", border: "1px solid #ddd", fontWeight: "bold" }}>
-                Q {totalPresupuestado.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-              </td>
-              <td style={{ padding: "12px 20px", border: "1px solid #ddd", fontWeight: "bold" }}>
-                Q {totalEjecutado.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-                <span style={{ color: "#06c", marginLeft: "10px" }}>
-                  ({porcentajeTotal.toFixed(2)}%)
-                </span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div style={{ width: "100%", overflowX: "auto", paddingBottom: "20px", marginTop: "1.5em" }}>
-        <div style={{ width: chartCanvasWidth, height: chartHeight, minWidth: "600px", margin: "0 auto" }}>
-          <Bar data={chartData} options={options} />
+        <div style={{ width: "100%", overflowX: "auto", paddingBottom: "20px", marginTop: "2em" }}>
+          <div style={{ width: chartCanvasWidth, height: "600px", minWidth: "600px", margin: "0 auto" }}>
+            <Bar data={chartData} options={options} />
+          </div>
         </div>
-      </div>
 
-      <DataTable data={sortedData} />
+        <DataTable data={sortedData} />
+      </div>
     </div>
   );
 };

@@ -211,7 +211,7 @@
 
   .body {
     flex-grow: 1; /* Permitir que el body crezca para ocupar el espacio restante */
-    width: 80%; /* Ancho del body */
+    width: 100%; /* Ancho del body */
     margin: auto; /* Centrar horizontalmente */
   }
 

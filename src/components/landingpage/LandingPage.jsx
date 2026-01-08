@@ -34,15 +34,7 @@ const LandingPage = () => {
 
   return (
     <div className="container">
-      {/* Agregar el nuevo componente Header
 
-          <h1 className="header">Momentos Únicos, Recuerdos Eternos</h1>
-          <p className="subText">
-          Fotógrafa profesional apasionada por capturar la esencia de los momentos que marcan tu vida. Me especializo en bodas, cumpleaños, bautizos, graduaciones, así como en sesiones fotográficas individuales, de pareja y familiares. Mi objetivo es entregarte imágenes llenas de emoción y recuerdos que perduren para siempre.
-          </p>
-          <button className="button">Purchase Now</button>
-          <button className="button">Explore Intro Video</button>
-    */}
       <div className="carouselContainer">
         <Slider {...settings}>
           {groupedImages.map((group, index) => (
