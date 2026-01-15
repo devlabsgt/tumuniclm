@@ -44,6 +44,9 @@ const SobreNosotrosPage = () => {
           ¡Juntos construyendo un futuro brillante para nuestro Municipio!
         </p>
         <Divider />
+              <Loader>
+        <ImageCarousel start={2} end={4} />
+      </Loader>
 
         <h2 className="title-chart">Políticas Públicas</h2>
         <div className="bar-chart-wrapper">
@@ -119,9 +122,7 @@ const SobreNosotrosPage = () => {
       </FadeInOnScroll>
 
       {/* 🔹 Carrusel de imágenes con lazy load también */}
-      <Loader>
-        <ImageCarousel start={65} end={73} />
-      </Loader>
+
 
       <FadeInOnScroll offset={200}>
         <div>

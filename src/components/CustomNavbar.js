@@ -30,7 +30,7 @@ import "./CustomNavbar.css";
 const CustomNavbar = () => {
   const navigate = useNavigate();
 
-  const organigrama = "/img/memoria/75.webp";
+  const organigrama = "/img/ORGANIGRAMA2026.webp";
   const misionvision = "/img/memoria/4.webp";
 
   const [bgColor, setBgColor] = useState("transparent");

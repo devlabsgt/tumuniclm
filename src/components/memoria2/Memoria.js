@@ -23,7 +23,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 
 // 🔥 Nueva función para generar automáticamente todas las imágenes disponibles en `public/img/memoria/`
 const importAllImages = () => {
-  const totalImages = 76; // Ajusta este número a la cantidad de imágenes reales
+  const totalImages = 113; // Ajusta este número a la cantidad de imágenes reales
 
   return Array.from(
     { length: totalImages },
@@ -119,7 +119,7 @@ const Memoria = () => {
       >
         <Menu.Item
           key="politica1"
-          onClick={() => scrollToImage(27)}
+          onClick={() => scrollToImage(9)}
           style={{ padding: "12px" }}
         >
           <FontAwesomeIcon
@@ -130,7 +130,7 @@ const Memoria = () => {
         </Menu.Item>
         <Menu.Item
           key="politica2"
-          onClick={() => scrollToImage(33)}
+          onClick={() => scrollToImage(27)}
           style={{ padding: "12px" }}
         >
           <FontAwesomeIcon icon={faRoad} style={{ marginRight: "1em" }} />
@@ -139,7 +139,7 @@ const Memoria = () => {
 
         <Menu.Item
           key="politica3"
-          onClick={() => scrollToImage(36)}
+          onClick={() => scrollToImage(50)}
           style={{ padding: "12px" }}
         >
           <FontAwesomeIcon icon={faBuilding} style={{ marginRight: "1em" }} />
@@ -148,7 +148,7 @@ const Memoria = () => {
 
         <Menu.Item
           key="politica4"
-          onClick={() => scrollToImage(42)}
+          onClick={() => scrollToImage(59)}
           style={{ padding: "12px" }}
         >
           <FontAwesomeIcon icon={faShieldAlt} style={{ marginRight: "1em" }} />
@@ -157,7 +157,7 @@ const Memoria = () => {
 
         <Menu.Item
           key="politica5"
-          onClick={() => scrollToImage(46)}
+          onClick={() => scrollToImage(64)}
           style={{ padding: "12px" }}
         >
           <FontAwesomeIcon icon={faHeartbeat} style={{ marginRight: "1em" }} />
@@ -165,7 +165,7 @@ const Memoria = () => {
         </Menu.Item>
         <Menu.Item
           key="politica6"
-          onClick={() => scrollToImage(48)}
+          onClick={() => scrollToImage(69)}
           style={{ padding: "12px" }}
         >
           <FontAwesomeIcon icon={faTree} style={{ marginRight: "1em" }} />
@@ -173,7 +173,7 @@ const Memoria = () => {
         </Menu.Item>
         <Menu.Item
           key="politica7"
-          onClick={() => scrollToImage(53)}
+          onClick={() => scrollToImage(74)}
           style={{ padding: "12px" }}
         >
           <FontAwesomeIcon icon={faChartLine} style={{ marginRight: "1em" }} />
@@ -183,7 +183,7 @@ const Memoria = () => {
 
       <Menu.Item
         key="infraestructura"
-        onClick={() => scrollToImage(54)}
+        onClick={() => scrollToImage(77)}
         style={{ padding: "12px" }}
       >
         <FontAwesomeIcon icon={faCity} style={{ marginRight: "1em" }} />
@@ -192,7 +192,7 @@ const Memoria = () => {
 
       <Menu.Item
         key="actividades"
-        onClick={() => scrollToImage(65)}
+        onClick={() => scrollToImage(93)}
         style={{ padding: "12px" }}
       >
         <FontAwesomeIcon icon={faCamera} style={{ marginRight: "1em" }} />
@@ -201,7 +201,7 @@ const Memoria = () => {
 
       <Menu.Item
         key="egresos"
-        onClick={() => scrollToImage(74)}
+        onClick={() => scrollToImage(112)}
         style={{ padding: "12px" }}
       >
         <FontAwesomeIcon

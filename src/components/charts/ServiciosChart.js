@@ -46,7 +46,7 @@ const ServiciosChart = () => {
         chartHeight={window.innerWidth < 768 ? "500px" : "600px"}
         chartCanvasWidth={window.innerWidth < 768 ? "350px" : "200px"}
       />
-      <ImageCarousel start={36} end={41} />
+      <ImageCarousel start={52} end={58} />
     </div>
   );
 };

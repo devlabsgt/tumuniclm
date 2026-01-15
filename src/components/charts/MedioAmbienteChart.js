@@ -14,11 +14,6 @@ const data = [
     ejecutado: 225802.20 // Actualizado según CSV
   },
   { 
-    nombre: "Tratamiento Desechos", 
-    presupuestado: 236000.00, 
-    ejecutado: 0.0 
-  },
-  { 
     nombre: "Recolección Desechos", 
     presupuestado: 1646500.00, 
     ejecutado: 1790226.88 // Actualizado según CSV
@@ -41,7 +36,7 @@ const MedioAmbienteChart = () => {
         chartHeight={window.innerWidth < 768 ? "500px" : "600px"}
         chartCanvasWidth={window.innerWidth < 768 ? "350px" : "200px"}
       />
-      <ImageCarousel start={48} end={52} />
+      <ImageCarousel start={69} end={73} />
     </div>
   );
 };

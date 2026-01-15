@@ -6,17 +6,17 @@ const data = [
   { nombre: "Pozo Valeriano", presupuestado: 500.00, ejecutado: 31582.77 },
   { nombre: "Pozo Guacamayas", presupuestado: 200.00, ejecutado: 3924700.00 },
   { nombre: "Calle y Drenaje La Loma", presupuestado: 250000.00, ejecutado: 149296.80 },
-  { nombre: "Líneas Eléctricas Los Planes", presupuestado: 1600000.00, ejecutado: 0.0 },
-  { nombre: "Líneas Eléctricas El Aguajal", presupuestado: 160000.00, ejecutado: 0.0 },
-  { nombre: "Pavimento San Antonio", presupuestado: 442000.00, ejecutado: 0.0 },
+  //{ nombre: "Líneas Eléctricas Los Planes", presupuestado: 1600000.00, ejecutado: 0.0 },
+  //{ nombre: "Líneas Eléctricas El Aguajal", presupuestado: 160000.00, ejecutado: 0.0 },
+  //{ nombre: "Pavimento San Antonio", presupuestado: 442000.00, ejecutado: 0.0 },
   { nombre: "Gimnasio Municipal", presupuestado: 3120000.00, ejecutado: 1722547.60 },
   { nombre: "Puente Valle Arriba", presupuestado: 1300000.00, ejecutado: 5116890.40 },
   // 🔹 Proyectos adicionales encontrados en el CSV para cuadrar el total:
   { nombre: "Agua Potable Aldea Dolores", presupuestado: 0.0, ejecutado: 89663.00 },
-  { nombre: "Agua Potable La Canada", presupuestado: 0.0, ejecutado: 787.00 },
-  { nombre: "Escuela Primaria Aldea Dolores", presupuestado: 0.0, ejecutado: 5000.00 },
-  { nombre: "Camino Rural Las Cruces", presupuestado: 0.0, ejecutado: 1000.00 },
-  { nombre: "Camino Rural Alambrados", presupuestado: 0.0, ejecutado: 1000.00 },
+ // { nombre: "Agua Potable La Canada", presupuestado: 0.0, ejecutado: 787.00 },
+  //{ nombre: "Escuela Primaria Aldea Dolores", presupuestado: 0.0, ejecutado: 5000.00 },
+  //{ nombre: "Camino Rural Las Cruces", presupuestado: 0.0, ejecutado: 1000.00 },
+  //{ nombre: "Camino Rural Alambrados", presupuestado: 0.0, ejecutado: 1000.00 },
 ];
 
 const InfraestructuraChart = () => {
@@ -30,7 +30,7 @@ const InfraestructuraChart = () => {
         chartHeight={window.innerWidth < 768 ? "500px" : "600px"}
         chartCanvasWidth={window.innerWidth < 768 ? "350px" : "200px"}
       />
-      <ImageCarousel start={54} end={64} />
+      <ImageCarousel start={79} end={92} />
     </div>
   );
 };

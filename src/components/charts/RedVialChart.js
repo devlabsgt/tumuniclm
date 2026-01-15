@@ -24,7 +24,7 @@ const RedvialChart = () => {
         chartHeight={window.innerWidth < 768 ? "500px" : "600px"}
         chartCanvasWidth={window.innerWidth < 768 ? "350px" : "200px"}
       />
-      <ImageCarousel start={33} end={35} />
+      <ImageCarousel start={28} end={49} />
     </div>
   );
 };

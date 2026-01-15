@@ -21,7 +21,7 @@ const SeguridadChart = () => {
         chartHeight={window.innerWidth < 768 ? "500px" : "600px"}
         chartCanvasWidth={window.innerWidth < 768 ? "350px" : "200px"}
       />
-      <ImageCarousel start={42} end={45} />
+      <ImageCarousel start={61} end={63} />
     </div>
   );
 };

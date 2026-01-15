@@ -61,7 +61,7 @@ const EducacionChart = () => {
         chartHeight={window.innerWidth < 768 ? "500px" : "600px"}
         chartCanvasWidth={window.innerWidth < 768 ? "350px" : "200px"}
       />
-      <ImageCarousel start={27} end={32} />
+      <ImageCarousel start={11} end={26} />
     </div>
   );
 };

@@ -21,7 +21,7 @@ const SaludChart = () => {
         chartHeight={window.innerWidth < 768 ? "500px" : "600px"}
         chartCanvasWidth={window.innerWidth < 768 ? "350px" : "200px"}
       />
-      <ImageCarousel start={46} end={47} />
+      <ImageCarousel start={65} end={66} />
     </div>
   );
 };

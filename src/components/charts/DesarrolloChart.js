@@ -26,7 +26,7 @@ const DesarrolloChart = () => {
         chartHeight={window.innerWidth < 768 ? "500px" : "600px"}
         chartCanvasWidth={window.innerWidth < 768 ? "350px" : "200px"}
       />
-      <ImageCarousel start={53} end={53} />
+      <ImageCarousel start={75} end={76} />
     </div>
   );
 };
