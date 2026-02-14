@@ -6,7 +6,7 @@ import CustomNavbar from "./components/CustomNavbar";
 import Memoria from "./components/memoria2/Memoria";
 import NotFound from "./components/notfound/NotFound";
 import MenuInfo from "./components/informacionpublica/MenuInfo";
-import PDFview from "./components/pdfview/PDFview";
+import WEBPview from "./components/webpview/WEBPview";
 
 function App() {
   return (
@@ -15,13 +15,10 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/admin" element={<AdminPage />} />
-        <Route
-          path="/memoria2025"
-          element={<PDFview pdfUrl="/memoria2025.pdf" />}
-        />
+        <Route path="/memoria2025" element={<Memoria />} />
         <Route
           path="/chuctifer2026"
-          element={<PDFview pdfUrl="/ProgramaFeria2026.pdf" />}
+          element={<WEBPview basePath="/img/programa" totalPages={20} />}
         />
         <Route path="/informacionpublica" element={<MenuInfo />} />
         <Route path="*" element={<NotFound />} />
