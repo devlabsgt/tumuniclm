@@ -68,7 +68,8 @@ function HomePage() {
               <h1 className="parallax-text">¡Hoy! Concepción Avanza</h1>
               <h2>
                 Gobierno Municipal
-                <br /> Telmo Javier
+                <br />
+                2024-2018
               </h2>
               <CustomNavbar />
             </div>

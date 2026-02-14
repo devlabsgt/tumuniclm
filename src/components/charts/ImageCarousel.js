@@ -4,7 +4,7 @@ import { Card, Image, Carousel, Button } from "antd";
 const importImages = (start, end) => {
   return Array.from(
     { length: end - start + 1 },
-    (_, i) => `/img/memoria/${start + i}.webp`
+    (_, i) => `/img/memoria/${start + i}-2025.webp`
   );
 };
 

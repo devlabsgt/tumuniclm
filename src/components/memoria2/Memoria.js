@@ -27,7 +27,7 @@ const importAllImages = () => {
 
   return Array.from(
     { length: totalImages },
-    (_, i) => `/img/memoria/${i + 1}.webp`
+    (_, i) => `/img/memoria/${i + 1}-2025.webp`//CAMBIAR EL ANIO si es nuevo
   );
 };
 

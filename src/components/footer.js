@@ -149,8 +149,8 @@ const Footer = () => {
             Minas
           </Text>
           <Text style={{ color: "#fff", display: "block", fontSize: "1.5em" }}>
-            Diseñado y desarrollado por la Oficina de Comunicación Social de la
-            Municipalidad de Concepción Las Minas
+            Diseñado y desarrollado por el Departamento Municipal de Tecnologías
+            de la Información
           </Text>
         </div>
       </AntFooter>

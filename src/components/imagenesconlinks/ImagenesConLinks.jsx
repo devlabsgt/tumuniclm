@@ -2,14 +2,14 @@ import React from "react";
 import { Divider } from "antd";
 
 const images = [
- /* {
-    src: "/img/carrusel/1.webp",
-    link: "/chuctifer2025",
-    text: "Haz click en la siguiente imagen para ver el Programa de la Feria 2025",
-  },*/
   {
-    src: "/img/carrusel/2.webp",
-    link: "/memoria2024",
+    src: "/img/carrusel/1.webp",
+    link: "/chuctifer2026",
+    text: "Haz click en la siguiente imagen para ver el Programa de la Feria 2025",
+  },
+  {
+    src: "/img/carrusel/2025.webp",
+    link: "/memoria2025",
     text: "Haz click en la siguiente imagen para ver la Memoria de Labores 2025",
   },
 ];
@@ -18,13 +18,13 @@ const ImagenesConLinks = () => {
   return (
     <div style={{ textAlign: "center", paddingTop: "1em" }}>
       {images.map((image, index) => (
-        <div key={index} style={{ marginBottom: "5em" }}>
+        <div key={index} style={{ marginBottom: "0.5em" }}>
           <p
             style={{
               fontSize: "1.5em",
               fontWeight: "bold",
-              marginBottom: "1.5em",
-              marginTop: "1.5em",
+              marginBottom: "0.5em",
+              marginTop: "0.5em",
               color: "#06c",
             }}
           >
