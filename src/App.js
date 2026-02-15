@@ -18,7 +18,7 @@ function App() {
         <Route path="/memoria2025" element={<Memoria />} />
         <Route
           path="/chuctifer2026"
-          element={<WEBPview basePath="/img/programa" totalPages={20} />}
+          element={<WEBPview basePath="/img/programa2026" totalPages={20} />}
         />
         <Route path="/informacionpublica" element={<MenuInfo />} />
         <Route path="*" element={<NotFound />} />
