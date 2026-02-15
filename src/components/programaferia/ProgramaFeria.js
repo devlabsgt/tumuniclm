@@ -89,7 +89,7 @@ const importAllImages = () => {
 
   return Array.from(
     { length: totalImages },
-    (_, i) => `/img/programa/${i + 1}.webp`
+    (_, i) => `/img/programa2026/${i + 1}.webp`,
   );
 };
 
@@ -100,7 +100,7 @@ const ProgramaFeria = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
-    setImages(importAllImages()); // Cargar imágenes desde /public/img/programa/
+    setImages(importAllImages()); // Cargar imágenes desde /public/img/programa2026/
 
     // Detectar tamaño de pantalla y actualizar el estado
     const handleResize = () => {
