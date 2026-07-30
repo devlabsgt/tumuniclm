@@ -3,11 +3,6 @@ import { Divider } from "antd";
 
 const images = [
   {
-    src: "/img/carrusel/1.webp",
-    link: "/chuctifer2026",
-    text: "Haz click en la siguiente imagen para ver el Programa de la Feria 2025",
-  },
-  {
     src: "/img/carrusel/2025.webp",
     link: "/memoria2025",
     text: "Haz click en la siguiente imagen para ver la Memoria de Labores 2025",
