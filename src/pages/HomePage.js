@@ -69,7 +69,7 @@ function HomePage() {
               <h2>
                 Gobierno Municipal
                 <br />
-                2024-2018
+                2024-2028
               </h2>
               <CustomNavbar />
             </div>
